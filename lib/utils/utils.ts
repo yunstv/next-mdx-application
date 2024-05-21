@@ -1,18 +1,18 @@
-import { type ClassValue, clsx } from 'clsx';
-import { twMerge } from 'tailwind-merge';
-import qs from 'qs';
-import React from 'react';
+import { type ClassValue, clsx } from "clsx";
+import { twMerge } from "tailwind-merge";
+import React from "react";
+import qs from "qs";
 
 export const QsStringify = (query: object = {}): string => qs.stringify(query);
 
 export const QsParseUrl = <T = unknown>(): T | AnyObject => {
   if (!inClient()) return {};
-  const href = window.location.search.replace('?', '');
+  const href = window.location.search.replace("?", "");
   return qs.parse(href);
 };
 
 export const getDomainPathname = <T = unknown>(): T | string => {
-  if (!inClient()) return '';
+  if (!inClient()) return "";
   const l = window.location;
   return `${l.origin}${l.pathname}`;
 };
@@ -26,7 +26,7 @@ export function cn(...inputs: ClassValue[]) {
 }
 
 export const inClient = () => !inServer();
-export const inServer = () => typeof window === 'undefined';
+export const inServer = () => typeof window === "undefined";
 
 /*
  * @param address string
@@ -41,7 +41,7 @@ export const formatAddressString = (
 ) => {
   if (!address) return address;
   const regexp = new RegExp(`(^.{${first}})(.+)(.{${end || first}}$)`);
-  return address.replace(regexp, '$1...$3');
+  return address.replace(regexp, "$1...$3");
 };
 export function sumRandom(max: number, min: number): number {
   const num = Math.floor(Math.random() * (max - min) + min);
@@ -61,7 +61,7 @@ export const extractStringBetweenSlashesLast = (inputString: string) => {
 
 export const pathRewrites = (value: string | null, rewrites?: string[]) => {
   if (!Array.isArray(rewrites)) return false;
-  return rewrites.some(v => extractStringBetweenSlashes(v) === value);
+  return rewrites.some((v) => extractStringBetweenSlashes(v) === value);
 };
 
 export const copyToClipboard = async (text: string): Promise<void> => {
@@ -71,18 +71,18 @@ export const copyToClipboard = async (text: string): Promise<void> => {
       await navigator.clipboard.writeText(text);
     } else {
       // If not supported, fallback to document.execCommand('copy')
-      const textarea = document.createElement('textarea');
+      const textarea = document.createElement("textarea");
       textarea.value = text;
-      textarea.setAttribute('readonly', '');
-      textarea.style.position = 'absolute';
-      textarea.style.left = '-9999px';
+      textarea.setAttribute("readonly", "");
+      textarea.style.position = "absolute";
+      textarea.style.left = "-9999px";
       document.body.appendChild(textarea);
 
       textarea.select();
 
-      const success = document.execCommand('copy');
+      const success = document.execCommand("copy");
       if (!success) {
-        throw new Error('Copy to clipboard failed.');
+        throw new Error("Copy to clipboard failed.");
       }
 
       document.body.removeChild(textarea);
@@ -249,14 +249,14 @@ export function openNewWindow(
   `;
   const newWindow: Window | null = window.open(
     url,
-    '_blank',
+    "_blank",
     strWindowOpt
     // `width=${width},height=${height},left=${left},top=${top}`
   );
 
   if (!newWindow) {
     alert(
-      'The pop-up window has been blocked by the browser. Please allow the pop-up window and try again.'
+      "The pop-up window has been blocked by the browser. Please allow the pop-up window and try again."
     );
   }
 }
