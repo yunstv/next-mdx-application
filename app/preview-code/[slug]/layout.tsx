@@ -1,8 +1,6 @@
 import { MainLayout } from "@comps/layout";
-import type { Metadata } from "next";
+import type { Metadata, ResolvingMetadata } from "next";
 import { Theme } from "@radix-ui/themes";
-import "@radix-ui/themes/styles.css";
-import "./syntax-highlighting.css";
 
 export const metadata: Metadata = {
   title: "Models",
