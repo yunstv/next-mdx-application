@@ -8,8 +8,8 @@ import css from "refractor/lang/css";
 import diff from "refractor/lang/diff";
 import { toHtml as hastToHtml } from "hast-util-to-html";
 import rangeParser from "parse-numeric-range";
-import highlightLine from "@utils/docs/rehype-highlight-line.mjs";
-import highlightWord from "@utils/docs/rehype-highlight-word.mjs";
+import highlightLine from "@utils/rehype-highlight-line.mjs";
+import highlightWord from "@utils/rehype-highlight-word.mjs";
 import { Box, Flex, IconButton, ScrollArea, Theme } from "@radix-ui/themes";
 import "./CodeBlock.css";
 
