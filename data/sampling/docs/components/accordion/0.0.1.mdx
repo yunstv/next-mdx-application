@@ -1,0 +1,45 @@
+---
+metaTitle: Accordion
+metaDescription: A vertically stacked set of interactive headings that each reveal an associated section of content.
+name: accordion
+aria: https://www.w3.org/WAI/ARIA/apg/patterns/accordion
+---
+
+# Accordion
+
+<h1>
+  A vertically stacked set of interactive headings that each reveal an
+  associated section of content.
+</h1>
+
+<HeroContainer>
+  <AccordionDemo />
+</HeroContainer>
+
+## Installation
+
+Install the component from your command line.
+
+```bash
+npm install @radix-ui/react-accordion
+```
+
+
+## Anatomy
+
+Import all parts and piece them together.
+
+```jsx
+import * as Accordion from '@radix-ui/react-accordion';
+
+export default () => (
+  <Accordion.Root>
+    <Accordion.Item>
+      <Accordion.Header>
+        <Accordion.Trigger />
+      </Accordion.Header>
+      <Accordion.Content />
+    </Accordion.Item>
+  </Accordion.Root>
+);
+```
