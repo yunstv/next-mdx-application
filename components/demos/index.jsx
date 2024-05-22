@@ -1,0 +1,1 @@
+export { default as AccordionDemo } from './Accordion/stitches';
