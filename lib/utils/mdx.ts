@@ -1,8 +1,8 @@
 import fs from "fs";
 import path from "path";
-import glob from "glob";
+import { glob } from "glob";
 import matter from "gray-matter";
-import compareVersions from "compare-versions";
+import * as compareVersions from "compare-versions";
 import { bundleMDX } from "mdx-bundler";
 import remarkSlug from "remark-slug";
 import rehypeHeroCodeBlock from "@utils/rehype-hero-code-block";
@@ -49,7 +49,6 @@ export const getMdxBySlug = async (basePath: string, slug: string) => {
         rehypeMetaAttribute,
         rehypeHighlightCode,
       ];
-
       return options;
     },
   });
