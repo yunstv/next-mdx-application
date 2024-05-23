@@ -5,15 +5,6 @@
   text-indent: -0.61em;
 }
 
-.HeroQuote::before {
-  content: "“";
-  margin-right: 0.1em;
-}
-
-.HeroQuote::after {
-  content: "”";
-}
-
 @media (min-width: 1300px) {
   .HeroQuote {
     position: relative;

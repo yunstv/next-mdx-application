@@ -12,6 +12,13 @@ import highlightLine from "@utils/rehype-highlight-line.mjs";
 import highlightWord from "@utils/rehype-highlight-word.mjs";
 import { Box, Flex, IconButton, ScrollArea, Theme } from "@radix-ui/themes";
 import "./CodeBlock.css";
+import "@radix-ui/themes/styles.css";
+
+refractor.register(js);
+refractor.register(jsx);
+refractor.register(bash);
+refractor.register(css);
+refractor.register(diff);
 
 interface CodeBaseProps extends React.ComponentPropsWithoutRef<"div"> {
   className?: string;
@@ -25,14 +32,6 @@ const Root = React.forwardRef<HTMLDivElement, RootProps>(function Root(
   return <Box ref={forwardedRef} className={className} {...props} />;
 });
 Root.displayName = "CodeBlock.Root";
-
-import "@radix-ui/themes/styles.css";
-
-refractor.register(js);
-refractor.register(jsx);
-refractor.register(bash);
-refractor.register(css);
-refractor.register(diff);
 
 interface HeaderProps extends CodeBaseProps {}
 const Header = React.forwardRef<HTMLDivElement, HeaderProps>(function Header(
@@ -111,18 +110,18 @@ const Code = React.forwardRef<HTMLElement, CodeProps>(
 );
 Code.displayName = "CodeBlock.Code";
 
-// interface CopyButtonProps extends CodeBaseProps {}
-// const CopyButton: React.FunctionComponent<CopyButtonProps> = ({
-//   className,
-// }) => {
-//   const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
-//     const value = event.currentTarget
-//       .closest('[data-code-block-content]')
-//       ?.querySelector('code')?.textContent;
-//     copy(value as string);
-//   };
-//   return <button onClick={handleClick}>copy</button>;
-// };
+interface CopyButtonProps extends CodeBaseProps {}
+const CopyButton: React.FunctionComponent<CopyButtonProps> = ({
+  className,
+}) => {
+  const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+    const value = event.currentTarget
+      .closest("[data-code-block-content]")
+      ?.querySelector("code")?.textContent;
+    copy(value as string);
+  };
+  return <button onClick={handleClick}>copy</button>;
+};
 
 const CodeBlock = {
   Root,
@@ -130,7 +129,7 @@ const CodeBlock = {
   Content,
   Code,
   Pre,
-  // CopyButton,
+  CopyButton,
 };
 
 export { CodeBlock };

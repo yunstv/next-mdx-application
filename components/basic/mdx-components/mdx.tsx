@@ -1,11 +1,9 @@
 "use client";
 
 import * as React from "react";
-import { Box, Flex, IconButton, ScrollArea, Theme } from "@radix-ui/themes";
-import "./CodeBlock.css";
+import { Box, Flex } from "@radix-ui/themes";
 import { getMDXComponent } from "mdx-bundler/client";
 import * as themesComponents from "@radix-ui/themes";
-import { CodeBlock } from "@comps/code-block-root";
 import * as Demos from "@/components/demos";
 import {
   Code,
@@ -18,7 +16,8 @@ import {
   Tabs,
   Text,
 } from "@radix-ui/themes";
-import { HeroContainer } from "@comps";
+import { HeroContainer, CodeBlock } from "@comps";
+import { HeroCodeBlock } from "@comps/hero-code-block";
 import "./mdx.css";
 
 export const components = {
@@ -131,6 +130,7 @@ export const components = {
   },
   CodeBlock,
   HeroContainer,
+  HeroCodeBlock,
 };
 
 interface CodeBaseProps extends React.ComponentPropsWithoutRef<"div"> {
