@@ -2,7 +2,7 @@ import fs from "fs";
 import path from "path";
 import { glob } from "glob";
 import matter from "gray-matter";
-import * as compareVersions from "compare-versions";
+import { compareVersions } from "compare-versions";
 import { bundleMDX } from "mdx-bundler";
 import remarkSlug from "remark-slug";
 import rehypeHeroCodeBlock from "@utils/rehype-hero-code-block";
@@ -68,6 +68,6 @@ export function getAllVersionsFromPath(fromPath: string) {
   return fs
     .readdirSync(PATH)
     .map((fileName) => fileName.replace(".mdx", ""))
-    .sort(compareVersions as any)
+    .sort(compareVersions)
     .reverse();
 }
