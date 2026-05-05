@@ -54,7 +54,6 @@ const AccordionContent = React.forwardRef(({ children, className, ...props }, fo
 
 AccordionContent.displayName = 'Accordion.Content'
 AccordionTrigger.displayName = 'Accordion.Trigger'
-AccordionItem.displayName = 'Accordion.Item'
 
 
 export default AccordionDemo;
