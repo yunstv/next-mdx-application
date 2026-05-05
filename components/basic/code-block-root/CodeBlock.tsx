@@ -10,7 +10,8 @@ import { toHtml as hastToHtml } from "hast-util-to-html";
 import rangeParser from "parse-numeric-range";
 import highlightLine from "@utils/rehype-highlight-line.mjs";
 import highlightWord from "@utils/rehype-highlight-word.mjs";
-import { Box, Flex, IconButton, ScrollArea, Theme } from "@radix-ui/themes";
+import { Box, IconButton, ScrollArea } from "@radix-ui/themes";
+import { CopyIcon } from "@radix-ui/react-icons";
 import "./CodeBlock.css";
 import "@radix-ui/themes/styles.css";
 
@@ -120,7 +121,18 @@ const CopyButton: React.FunctionComponent<CopyButtonProps> = ({
       ?.querySelector("code")?.textContent;
     copy(value as string);
   };
-  return <button onClick={handleClick}>copy</button>;
+  return (
+    <IconButton
+      size="1"
+      variant="ghost"
+      color="gray"
+      aria-label="Copy"
+      onClick={handleClick}
+      className={className}
+    >
+      <CopyIcon />
+    </IconButton>
+  );
 };
 
 const CodeBlock = {

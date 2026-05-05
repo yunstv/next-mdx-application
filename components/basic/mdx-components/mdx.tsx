@@ -99,9 +99,10 @@ export const components = {
     </Box>
   ),
   pre: ({ children }: any) => (
-    <CodeBlock.Root>
-      <CodeBlock.Content>
-        <CodeBlock.Pre>{children}</CodeBlock.Pre>
+    <CodeBlock.Root className="CodeBlockRoot">
+      <CodeBlock.Content className="CodeBlockContent">
+        <CodeBlock.Pre className="CodeBlockPre">{children}</CodeBlock.Pre>
+        <CodeBlock.CopyButton className="CodeBlockCopyButton" />
       </CodeBlock.Content>
     </CodeBlock.Root>
   ),

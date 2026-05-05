@@ -1,6 +1,5 @@
 "use client";
 import React from "react";
-import empty from "@/app/assets/image/empty.png";
 import { cn } from "@utils";
 
 export function Empty() {

@@ -1,39 +1,54 @@
-.HeroContainer {
-  background-image: linear-gradient(
-    330deg,
-    var(--purple-9) 0%,
-    var(--indigo-9) 100%
-  );
-  padding-block: 100px;
-  border-top-left-radius: var(--radius-4);
-  border-top-right-radius: var(--radius-4);
-
-  @media (min-width: 1200px) {
-    margin-left: calc(-1 * var(--space-7));
-    margin-right: calc(-1 * var(--space-7));
-  }
-}
-
 .DemoContainer {
-  @media (min-width: 1200px) {
-    margin-left: calc(-1 * var(--space-7));
-    margin-right: calc(-1 * var(--space-7));
-  }
+  position: relative;
+  background-color: var(--color-panel-solid);
+  border: 1px solid var(--gray-a5);
+  border-top: none;
+  border-bottom-left-radius: var(--radius-4);
+  border-bottom-right-radius: var(--radius-4);
+  overflow: hidden;
 }
 
-.SandboxButton {
-  opacity: 0;
-  transition: opacity 80ms ease-out;
-}
-.SandboxButton:hover,
-.SandboxButton:focus {
-  opacity: 1;
-}
-
-.HeroContainer:hover + .DemoContainer .SandboxButton {
-  opacity: 1;
+/* Tabs row */
+.DemoContainer .rt-TabsList {
+  background-color: var(--color-panel-solid);
+  border-bottom: 1px solid var(--gray-a5);
+  padding-left: var(--space-3);
+  padding-right: var(--space-2);
 }
 
+.DemoContainer .rt-TabsTrigger {
+  padding-left: var(--space-3);
+  padding-right: var(--space-3);
+}
+
+/* Code area */
+.DemoContainer pre {
+  margin: 0;
+  padding: var(--space-4) var(--space-5) 80px;
+  font-family: var(--code-font-family, ui-monospace, SFMono-Regular, "SF Mono",
+      Consolas, "Liberation Mono", Menlo, monospace);
+  font-size: 13px;
+  line-height: 1.7;
+  color: var(--gray-12);
+  background-color: var(--color-panel-solid);
+}
+
+.DemoContainer pre code {
+  all: unset;
+  display: block;
+  white-space: pre;
+}
+
+/* Copy button visible */
+.DemoContainer button[aria-label="Copy"],
+.DemoContainer .CodeBlockCopyButton {
+  color: var(--gray-11);
+}
+.DemoContainer button[aria-label="Copy"]:hover {
+  color: var(--gray-12);
+}
+
+/* Collapse / Expand bottom strip */
 .CollapsibleGradient {
   position: absolute;
   bottom: 0;
@@ -42,11 +57,7 @@
   height: 80px;
   padding: var(--space-3);
   overflow: hidden;
-  border-radius: 0 0 var(--radius-4) var(--radius-4);
-}
-
-.CollapsibleGradient > button {
-  z-index: 2;
+  pointer-events: none;
 }
 
 .CollapsibleGradient::before {
@@ -54,10 +65,15 @@
   pointer-events: none;
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, transparent, var(--white-a11) 70%);
-  opacity: 0.9;
+  background: linear-gradient(
+    180deg,
+    transparent,
+    var(--color-panel-solid) 70%
+  );
 }
 
-:global(:where(.dark, .dark-theme)) .CollapsibleGradient::before {
-  background: linear-gradient(180deg, transparent, var(--gray-1) 70%);
+.CollapsibleGradient > * {
+  position: relative;
+  z-index: 2;
+  pointer-events: auto;
 }

@@ -16,10 +16,10 @@ export function HeroContainer({
       // In case any semantic content sneaks through in a hero, let's hide it
       // from the a11y tree since this is a presentational component.
       role="presentation"
-      position="relative"
-      align="start"
+      align="center"
       justify="center"
-      className={"HeroQuote"}
+      className="HeroContainer"
+      style={style}
       {...props}
     >
       {children}

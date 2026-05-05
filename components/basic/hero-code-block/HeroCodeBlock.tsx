@@ -1,16 +1,6 @@
 "use client";
 import * as React from "react";
-import {
-  Box,
-  Flex,
-  Button,
-  IconButton,
-  Tooltip,
-  Tabs,
-  Select,
-  Theme,
-  Grid,
-} from "@radix-ui/themes";
+import { Box, Flex, Button, Tabs, Grid } from "@radix-ui/themes";
 import * as Collapsible from "@radix-ui/react-collapsible";
 import type { CssLib } from "@utils/constants";
 import "./HeroCodeBlock.css";
@@ -74,16 +64,7 @@ export const HeroCodeBlock = ({
     <Box className={"DemoContainer"} data-algolia-exclude position="relative">
       <Collapsible.Root open={isCodeExpanded} onOpenChange={setIsCodeExpanded}>
         <Collapsible.Content asChild forceMount>
-          <Box
-            data-code-block-content
-            position="relative"
-            style={{
-              border: "1px solid var(--gray-a5)",
-              borderBottomLeftRadius: "var(--radius-4)",
-              borderBottomRightRadius: "var(--radius-4)",
-              borderTop: "none",
-            }}
-          >
+          <Box data-code-block-content position="relative">
             <Tabs.Root
               value={currentTabValue}
               onValueChange={(value) => {
@@ -92,13 +73,7 @@ export const HeroCodeBlock = ({
               }}
               className="overflow-hidden"
             >
-              <Tabs.List
-                style={{
-                  position: "relative",
-                  backgroundColor: "var(--color-panel-solid)",
-                  marginBottom: -1,
-                }}
-              >
+              <Tabs.List>
                 {currentTabs.map((tab: any) => (
                   <Tabs.Trigger key={tab.id} value={tab.id}>
                     {tab.title}
@@ -124,32 +99,23 @@ export const HeroCodeBlock = ({
                         overflow={isCodeExpanded ? "scroll" : "hidden"}
                       >
                         <code>{tab.children}</code>
-
-                        <Box height="64px" />
-                        <Flex
-                          align="end"
-                          justify="center"
-                          className={"CollapsibleGradient"}
-                        >
-                          <Collapsible.Trigger asChild>
-                            <Box
-                              position="relative"
-                              style={{
-                                backgroundColor: "var(--color-panel-solid)",
-                              }}
-                            >
-                              <Button
-                                size="1"
-                                variant="soft"
-                                highContrast
-                                color="gray"
-                              >
-                                {isCodeExpanded ? "Collapse" : "Expand"} code
-                              </Button>
-                            </Box>
-                          </Collapsible.Trigger>
-                        </Flex>
                       </CodeBlock.Pre>
+                      <Flex
+                        align="end"
+                        justify="center"
+                        className={"CollapsibleGradient"}
+                      >
+                        <Collapsible.Trigger asChild>
+                          <Button
+                            size="1"
+                            variant="soft"
+                            highContrast
+                            color="gray"
+                          >
+                            {isCodeExpanded ? "Collapse" : "Expand"} code
+                          </Button>
+                        </Collapsible.Trigger>
+                      </Flex>
                     </Grid>
                   </CodeBlock.Content>
                 </Tabs.Content>
