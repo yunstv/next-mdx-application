@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(curl -s -o /tmp/p.html -w \"progress -> %{http_code}\\\\n\" http://localhost:3001/sampling/docs/components/progress)",
+      "Bash(curl -s -o /tmp/p.html -w \"progress -> %{http_code}\\\\n\" http://localhost:3000/sampling/docs/components/progress)",
+      "Bash(git diff *)"
+    ]
+  }
+}
