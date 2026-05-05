@@ -1,7 +1,16 @@
-export default function RootLayout({
+import { QuickNav } from "@comps/quick-nav";
+
+export default function Layout({
   children,
-}: Readonly<{
+  params,
+}: {
   children: React.ReactNode;
-}>) {
-  return children;
+  params: { slug: string };
+}) {
+  return (
+    <div className="flex">
+      <main className="min-w-0 flex-1 px-8 py-8">{children}</main>
+      <QuickNav slug={params.slug} />
+    </div>
+  );
 }
