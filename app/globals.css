@@ -1,6 +1,4 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
 @font-face {
   font-family: "Inter";
@@ -26,6 +24,14 @@
 
 .font-beVietnam {
   font-family: "BeVietnam", serif;
+}
+
+@utility bg-gradient-radial {
+  background-image: radial-gradient(var(--tw-gradient-stops));
+}
+
+@utility bg-gradient-conic {
+  background-image: conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops));
 }
 
 @layer components {
@@ -57,6 +63,7 @@
     white-space: nowrap;
   }
 }
+
 :root {
   --background: 0 0% 100%;
   --foreground: 240 10% 3.9%;
