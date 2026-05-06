@@ -23,15 +23,25 @@ export const HeroCodeBlock = ({
   const [isCodeExpanded, setIsCodeExpanded] = React.useState(false);
 
   const snippets = React.Children.toArray(children).map((pre) => {
-    if (pre && typeof pre === "object" && "props" in pre) {
-      return {
-        id: pre.props.title,
-        title: pre.props.title,
-        cssLib: pre.props.cssLib,
-        children: React.Children.only(pre.props.children).props?.children,
-        source: pre.props.source,
-      };
-    }
+    if (!React.isValidElement(pre)) return undefined;
+    const props = pre.props as {
+      title: string;
+      cssLib: CssLib;
+      source: string;
+      children: React.ReactElement;
+    };
+    const codeChildren = (
+      React.Children.only(props.children).props as {
+        children?: React.ReactNode;
+      }
+    )?.children;
+    return {
+      id: props.title,
+      title: props.title,
+      cssLib: props.cssLib,
+      children: codeChildren,
+      source: props.source,
+    };
   });
 
   // const availableCssLibs = React.useState([]);
