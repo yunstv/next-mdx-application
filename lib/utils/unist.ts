@@ -1,6 +1,7 @@
 import type { Node } from "unist";
 
 export interface UnistTree extends Node {
+  type: string;
   children: UnistNode[];
 }
 

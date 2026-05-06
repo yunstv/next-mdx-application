@@ -265,4 +265,5 @@ export function openNewWindow(
 export const isReactElement = (
   element?: React.ReactNode
 ): element is React.ReactElement =>
-  React.isValidElement(element) && Boolean(element.props.children);
+  React.isValidElement(element) &&
+  Boolean((element.props as { children?: React.ReactNode })?.children);
