@@ -1,11 +1,11 @@
 import React from "react";
 import copy from "copy-to-clipboard";
 import { refractor } from "refractor";
-import js from "refractor/lang/javascript";
-import jsx from "refractor/lang/jsx";
-import bash from "refractor/lang/bash";
-import css from "refractor/lang/css";
-import diff from "refractor/lang/diff";
+import js from "refractor/javascript";
+import jsx from "refractor/jsx";
+import bash from "refractor/bash";
+import css from "refractor/css";
+import diff from "refractor/diff";
 import { toHtml as hastToHtml } from "hast-util-to-html";
 import rangeParser from "parse-numeric-range";
 import highlightLine from "@utils/rehype-highlight-line.mjs";
