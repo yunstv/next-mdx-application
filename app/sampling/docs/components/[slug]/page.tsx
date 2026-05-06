@@ -22,10 +22,15 @@ const ComponentsDoc = async ({ slug }: { slug: string }) => {
   );
 };
 
-export default function Page({ params }: { params: { slug: string } }) {
+export default async function Page({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
+  const { slug } = await params;
   return (
     <div className="mt-8 flex flex-col gap-5">
-      <ComponentsDoc slug={params.slug} />
+      <ComponentsDoc slug={slug} />
     </div>
   );
 }

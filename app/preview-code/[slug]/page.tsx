@@ -5,11 +5,6 @@ import fs from "fs";
 import path from "path";
 import React from "react";
 
-type PayloadType = {
-  params: {
-    slug: [];
-  };
-};
 export const dynamicParams = false;
 
 const codeExample = `
@@ -39,7 +34,7 @@ const Code = ({ code }: { code: string }) => {
 export default function Page({
   params,
 }: {
-  params: { code: string; slug: string };
+  params: Promise<{ slug: string }>;
 }) {
   const code = "";
   const node: any[] = [];
