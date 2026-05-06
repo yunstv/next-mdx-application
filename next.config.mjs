@@ -1,12 +1,12 @@
+import path from "node:path";
+import { fileURLToPath } from "node:url";
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  webpack: (config, options) => {
-    config.module.rules.push({
-      test: /\.mjs/,
-      include: /node_modules/,
-      type: "javascript/auto",
-    });
-    return config;
+  turbopack: {
+    root: __dirname,
   },
 };
 
