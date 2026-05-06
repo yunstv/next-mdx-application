@@ -4,7 +4,7 @@ import { glob } from "glob";
 import matter from "gray-matter";
 import { compareVersions } from "compare-versions";
 import { bundleMDX } from "mdx-bundler";
-import remarkSlug from "remark-slug";
+import rehypeSlug from "rehype-slug";
 import rehypeHeroCodeBlock from "@utils/rehype-hero-code-block";
 import rehypeMetaAttribute from "@utils/rehype-meta-attribute.mjs";
 import rehypeHighlightCode from "@utils/rehype-highlight-code.mjs";
@@ -42,9 +42,9 @@ export const getMdxBySlug = async (basePath: string, slug: string) => {
   const { frontmatter, code } = await bundleMDX({
     source: source,
     mdxOptions(options, frontmatter) {
-      options.remarkPlugins = [...(options.remarkPlugins ?? []), remarkSlug];
       options.rehypePlugins = [
         ...(options.rehypePlugins ?? []),
+        rehypeSlug,
         rehypeHeroCodeBlock,
         rehypeMetaAttribute,
         rehypeHighlightCode,
