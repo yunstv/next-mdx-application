@@ -6,4 +6,5 @@ export { default as DialogDemo } from './Dialog/stitches';
 export { default as DropdownMenuDemo } from './DropdownMenu/stitches';
 export { default as LabelDemo } from './Label/stitches';
 export { default as PopoverDemo } from './Popover/stitches';
+export { default as PortalDemo } from './Portal/stitches';
 export { default as ProgressDemo } from './Progress/stitches';

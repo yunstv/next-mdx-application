@@ -1,0 +1,43 @@
+---
+metaTitle: Portal
+metaDescription: Renders a React subtree in a different part of the DOM.
+name: portal
+aria: https://www.w3.org/TR/wai-aria-1.2
+---
+
+# Portal
+
+<h1>Renders a React subtree in a different part of the DOM. Useful for escaping <code>overflow:hidden</code> or stacking contexts.</h1>
+
+<HeroContainer>
+  <PortalDemo />
+</HeroContainer>
+
+<HeroCodeBlock folder="Portal" />
+
+## Installation
+
+```bash
+npm install @radix-ui/react-portal
+```
+
+## Anatomy
+
+```jsx
+import * as Portal from '@radix-ui/react-portal';
+
+export default () => (
+  <Portal.Root container={document.body}>
+    {/* anything */}
+  </Portal.Root>
+);
+```
+
+## API Reference
+
+### Root
+The portal container. Defaults to mounting into `document.body`. Pass `container` to choose a different node.
+
+## Accessibility
+
+The portal preserves React's tree, but moves the actual DOM node. Make sure to use focus management primitives (e.g. `Dialog`) when interactive content lives in a portal.
