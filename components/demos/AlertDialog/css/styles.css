@@ -1,0 +1,47 @@
+.AlertDialogOverlay {
+  background-color: rgba(0, 0, 0, 0.4);
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+}
+.AlertDialogContent {
+  background-color: white;
+  border-radius: 6px;
+  box-shadow: 0 10px 38px -10px rgba(22,23,24,0.35), 0 10px 20px -15px rgba(22,23,24,0.2);
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90vw;
+  max-width: 500px;
+  max-height: 85vh;
+  padding: 25px;
+  z-index: 51;
+}
+.AlertDialogTitle { margin: 0; color: #111827; font-size: 17px; font-weight: 500; }
+.AlertDialogDescription {
+  margin-top: 15px;
+  margin-bottom: 20px;
+  color: #475569;
+  font-size: 15px;
+  line-height: 1.5;
+}
+.Button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  padding: 0 15px;
+  font-size: 15px;
+  line-height: 1;
+  font-weight: 500;
+  height: 35px;
+  border: none;
+  cursor: pointer;
+}
+.Button.violet { background-color: white; color: #6d28d9; box-shadow: 0 2px 10px rgba(0,0,0,0.2); }
+.Button.violet:hover { background-color: #f1f5f9; }
+.Button.mauve { background-color: #f1f5f9; color: #0f172a; }
+.Button.mauve:hover { background-color: #e2e8f0; }
+.Button.red { background-color: #fee2e2; color: #b91c1c; }
+.Button.red:hover { background-color: #fecaca; }
