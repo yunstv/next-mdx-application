@@ -1,0 +1,46 @@
+---
+metaTitle: Checkbox
+metaDescription: A control that allows the user to toggle between checked and not checked.
+name: checkbox
+aria: https://www.w3.org/WAI/ARIA/apg/patterns/checkbox
+---
+
+# Checkbox
+
+<h1>A control that allows the user to toggle between checked and not checked.</h1>
+
+<HeroContainer>
+  <CheckboxDemo />
+</HeroContainer>
+
+<HeroCodeBlock folder="Checkbox" />
+
+## Installation
+
+```bash
+npm install @radix-ui/react-checkbox
+```
+
+## Anatomy
+
+```jsx
+import * as Checkbox from '@radix-ui/react-checkbox';
+
+export default () => (
+  <Checkbox.Root>
+    <Checkbox.Indicator />
+  </Checkbox.Root>
+);
+```
+
+## API Reference
+
+### Root
+Contains all the parts of a checkbox. Holds the state and accepts `checked` / `defaultChecked`.
+
+### Indicator
+Renders only when the checkbox is in a checked or indeterminate state.
+
+## Accessibility
+
+Adheres to the [Tri-State Checkbox WAI-ARIA design pattern](https://www.w3.org/WAI/ARIA/apg/patterns/checkbox).
