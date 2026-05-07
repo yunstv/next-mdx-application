@@ -11,3 +11,4 @@ export { default as ProgressDemo } from './Progress/stitches';
 export { default as RadioGroupDemo } from './RadioGroup/stitches';
 export { default as SelectDemo } from './Select/stitches';
 export { default as SliderDemo } from './Slider/stitches';
+export { default as SlotDemo } from './Slot/stitches';
