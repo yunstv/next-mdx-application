@@ -1,5 +1,7 @@
 # 项目架构说明
 
+**简体中文** | [English](./ARCHITECTURE.en.md)
+
 > 一份「人类能理解」的项目运行手册：源码 → 编译 → 路由 → 渲染结果，全链路如何串起来。
 
 本项目是一个基于 **Next.js 14 (App Router)** 的组件文档站点，采用 MDX 作为内容来源、Radix UI 作为组件骨架，支持 **CSS / Stitches / Tailwind** 三套样式实现的 Demo 切换预览。
