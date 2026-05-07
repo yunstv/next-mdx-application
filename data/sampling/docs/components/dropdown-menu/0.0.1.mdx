@@ -1,0 +1,55 @@
+---
+metaTitle: Dropdown Menu
+metaDescription: Displays a menu to the user — such as a set of actions or functions — triggered by a button.
+name: dropdown-menu
+aria: https://www.w3.org/WAI/ARIA/apg/patterns/menu-button
+---
+
+# Dropdown Menu
+
+<h1>Displays a menu to the user — such as a set of actions or functions — triggered by a button.</h1>
+
+<HeroContainer>
+  <DropdownMenuDemo />
+</HeroContainer>
+
+<HeroCodeBlock folder="DropdownMenu" />
+
+## Installation
+
+```bash
+npm install @radix-ui/react-dropdown-menu
+```
+
+## Anatomy
+
+```jsx
+import * as DropdownMenu from '@radix-ui/react-dropdown-menu';
+
+export default () => (
+  <DropdownMenu.Root>
+    <DropdownMenu.Trigger />
+    <DropdownMenu.Portal>
+      <DropdownMenu.Content>
+        <DropdownMenu.Item />
+        <DropdownMenu.Separator />
+      </DropdownMenu.Content>
+    </DropdownMenu.Portal>
+  </DropdownMenu.Root>
+);
+```
+
+## API Reference
+
+### Trigger
+The button that toggles the menu.
+
+### Item
+The menu item itself, supports keyboard navigation.
+
+### Separator
+Visually separates groups of items.
+
+## Accessibility
+
+Adheres to the [Menu Button WAI-ARIA design pattern](https://www.w3.org/WAI/ARIA/apg/patterns/menu-button).

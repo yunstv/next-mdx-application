@@ -1,0 +1,29 @@
+.IconButton {
+  width: 35px; height: 35px;
+  display: inline-flex; align-items: center; justify-content: center;
+  border-radius: 100%;
+  background-color: white; color: #6d28d9;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  border: none; cursor: pointer;
+}
+.IconButton:hover { background-color: #f1f5f9; }
+.DropdownMenuContent {
+  min-width: 220px;
+  background-color: white;
+  border-radius: 6px;
+  padding: 5px;
+  box-shadow: 0 10px 38px -10px rgba(22,23,24,0.35);
+  z-index: 50;
+}
+.DropdownMenuItem {
+  font-size: 13px; line-height: 1; color: #6d28d9;
+  display: flex; align-items: center;
+  height: 25px; padding: 0 5px; padding-left: 25px;
+  position: relative; user-select: none; outline: none; border-radius: 3px;
+}
+.DropdownMenuItem[data-disabled] { color: #94a3b8; pointer-events: none; }
+.DropdownMenuItem[data-highlighted] { background-color: #6d28d9; color: white; }
+.DropdownMenuSeparator { height: 1px; background-color: #ddd6fe; margin: 5px; }
+.DropdownMenuArrow { fill: white; }
+.RightSlot { margin-left: auto; padding-left: 20px; color: #64748b; }
+.DropdownMenuItem[data-highlighted] .RightSlot { color: white; }
