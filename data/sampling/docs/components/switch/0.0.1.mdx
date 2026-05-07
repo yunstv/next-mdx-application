@@ -1,0 +1,46 @@
+---
+metaTitle: Switch
+metaDescription: A control that allows the user to toggle between checked and not checked.
+name: switch
+aria: https://www.w3.org/WAI/ARIA/apg/patterns/switch
+---
+
+# Switch
+
+<h1>A control that allows the user to toggle between checked and not checked.</h1>
+
+<HeroContainer>
+  <SwitchDemo />
+</HeroContainer>
+
+<HeroCodeBlock folder="Switch" />
+
+## Installation
+
+```bash
+npm install @radix-ui/react-switch
+```
+
+## Anatomy
+
+```jsx
+import * as Switch from '@radix-ui/react-switch';
+
+export default () => (
+  <Switch.Root>
+    <Switch.Thumb />
+  </Switch.Root>
+);
+```
+
+## API Reference
+
+### Root
+Contains the parts. Accepts `checked` / `defaultChecked`.
+
+### Thumb
+The thumb that translates inside the track.
+
+## Accessibility
+
+Adheres to the [Switch WAI-ARIA design pattern](https://www.w3.org/WAI/ARIA/apg/patterns/switch).
