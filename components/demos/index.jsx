@@ -10,3 +10,4 @@ export { default as PortalDemo } from './Portal/stitches';
 export { default as ProgressDemo } from './Progress/stitches';
 export { default as RadioGroupDemo } from './RadioGroup/stitches';
 export { default as SelectDemo } from './Select/stitches';
+export { default as SliderDemo } from './Slider/stitches';
