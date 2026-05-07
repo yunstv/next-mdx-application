@@ -33,12 +33,12 @@ Follow these rules when you write code:
 - Implement accessibility features on elements. For example, a tag should have a tabindex=“0”, aria-label, on:click, and on:keydown, and similar attributes.
 - Use consts instead of functions, for example, “const toggle = () =>”. Also, define a type if possible.
 
+### Language
+- Please tell me the answer in Chinese
+- All the code comments are in English
+
+When a user requests "compare ui" or "check fidelity", the ui-auditor.md workflow must be forcibly initiated. It is strictly prohibited to answer merely based on visual intuition.
+
 # Git Commit Rules
 - When generating or executing git commits, NEVER add "Co-authored-by" trailers.
 - Keep commit messages clean and strictly follow the Conventional Commits format.
-
-# Media Playback Rule:
-- When using react-player or <video> for autoplaying background videos:
-- Always use a hasMounted state to ensure client-side only rendering.
-- Initialize playing as false and only toggle to true inside the onReady callback.
-- Always include muted and playsinline to satisfy browser autoplay policies.
