@@ -1,0 +1,57 @@
+---
+metaTitle: Dialog
+metaDescription: A window overlaid on either the primary window or another dialog window.
+name: dialog
+aria: https://www.w3.org/WAI/ARIA/apg/patterns/dialog-modal
+---
+
+# Dialog
+
+<h1>A window overlaid on either the primary window or another dialog window, rendering the content underneath inert.</h1>
+
+<HeroContainer>
+  <DialogDemo />
+</HeroContainer>
+
+<HeroCodeBlock folder="Dialog" />
+
+## Installation
+
+```bash
+npm install @radix-ui/react-dialog
+```
+
+## Anatomy
+
+```jsx
+import * as Dialog from '@radix-ui/react-dialog';
+
+export default () => (
+  <Dialog.Root>
+    <Dialog.Trigger />
+    <Dialog.Portal>
+      <Dialog.Overlay />
+      <Dialog.Content>
+        <Dialog.Title />
+        <Dialog.Description />
+        <Dialog.Close />
+      </Dialog.Content>
+    </Dialog.Portal>
+  </Dialog.Root>
+);
+```
+
+## API Reference
+
+### Root
+Contains all the parts of a dialog.
+
+### Content
+Contains content to be rendered in the open dialog.
+
+### Title / Description
+Accessible name and description announced when the dialog opens.
+
+## Accessibility
+
+Adheres to the [Dialog WAI-ARIA design pattern](https://www.w3.org/WAI/ARIA/apg/patterns/dialog-modal).
