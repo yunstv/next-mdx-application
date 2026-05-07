@@ -1,0 +1,50 @@
+---
+metaTitle: Avatar
+metaDescription: An image element with a fallback for representing the user.
+name: avatar
+aria: https://www.w3.org/WAI/ARIA/apg
+---
+
+# Avatar
+
+<h1>An image element with a fallback for representing the user.</h1>
+
+<HeroContainer>
+  <AvatarDemo />
+</HeroContainer>
+
+<HeroCodeBlock folder="Avatar" />
+
+## Installation
+
+```bash
+npm install @radix-ui/react-avatar
+```
+
+## Anatomy
+
+```jsx
+import * as Avatar from '@radix-ui/react-avatar';
+
+export default () => (
+  <Avatar.Root>
+    <Avatar.Image />
+    <Avatar.Fallback />
+  </Avatar.Root>
+);
+```
+
+## API Reference
+
+### Root
+Contains all the parts of an avatar.
+
+### Image
+The image to render. By default it will only render once it has loaded.
+
+### Fallback
+An element that renders while the image is loading or if it fails to load.
+
+## Accessibility
+
+The image is rendered with the `alt` attribute. Fallback content displays automatically when the image is unavailable.
