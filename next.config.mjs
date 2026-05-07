@@ -5,6 +5,10 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  output: "export",
+  basePath: "/next-mdx-application",
+  trailingSlash: true,
+  images: { unoptimized: true },
   turbopack: {
     root: __dirname,
   },
