@@ -1,0 +1,19 @@
+.LabelRoot {
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 35px;
+  color: white;
+}
+.Input {
+  width: 200px;
+  background-color: rgba(255,255,255,0.5);
+  border-radius: 4px;
+  padding: 0 10px;
+  height: 35px;
+  font-size: 15px;
+  line-height: 1;
+  color: white;
+  border: none;
+}
+.Input::placeholder { color: rgba(255,255,255,0.7); }
+.Input:focus { outline: 2px solid white; outline-offset: 1px; }
