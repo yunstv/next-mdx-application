@@ -1,0 +1,55 @@
+---
+metaTitle: Popover
+metaDescription: Displays rich content in a portal, triggered by a button.
+name: popover
+aria: https://www.w3.org/WAI/ARIA/apg/patterns/dialog-modal
+---
+
+# Popover
+
+<h1>Displays rich content in a portal, triggered by a button.</h1>
+
+<HeroContainer>
+  <PopoverDemo />
+</HeroContainer>
+
+<HeroCodeBlock folder="Popover" />
+
+## Installation
+
+```bash
+npm install @radix-ui/react-popover
+```
+
+## Anatomy
+
+```jsx
+import * as Popover from '@radix-ui/react-popover';
+
+export default () => (
+  <Popover.Root>
+    <Popover.Trigger />
+    <Popover.Portal>
+      <Popover.Content>
+        <Popover.Close />
+        <Popover.Arrow />
+      </Popover.Content>
+    </Popover.Portal>
+  </Popover.Root>
+);
+```
+
+## API Reference
+
+### Trigger
+The button that toggles the popover.
+
+### Content
+The container for the popover content.
+
+### Arrow
+An optional arrow pointing to the trigger.
+
+## Accessibility
+
+Adheres to the [Dialog WAI-ARIA design pattern](https://www.w3.org/WAI/ARIA/apg/patterns/dialog-modal).
