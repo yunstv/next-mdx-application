@@ -1,0 +1,51 @@
+---
+metaTitle: Radio Group
+metaDescription: A set of checkable buttons — known as radio buttons — where no more than one of the buttons can be checked at a time.
+name: radio-group
+aria: https://www.w3.org/WAI/ARIA/apg/patterns/radio
+---
+
+# Radio Group
+
+<h1>A set of checkable buttons — known as radio buttons — where no more than one of the buttons can be checked at a time.</h1>
+
+<HeroContainer>
+  <RadioGroupDemo />
+</HeroContainer>
+
+<HeroCodeBlock folder="RadioGroup" />
+
+## Installation
+
+```bash
+npm install @radix-ui/react-radio-group
+```
+
+## Anatomy
+
+```jsx
+import * as RadioGroup from '@radix-ui/react-radio-group';
+
+export default () => (
+  <RadioGroup.Root>
+    <RadioGroup.Item>
+      <RadioGroup.Indicator />
+    </RadioGroup.Item>
+  </RadioGroup.Root>
+);
+```
+
+## API Reference
+
+### Root
+Contains the radio items. Holds the selected `value`.
+
+### Item
+A single radio button.
+
+### Indicator
+Renders only when the item is checked.
+
+## Accessibility
+
+Adheres to the [Radio Group WAI-ARIA design pattern](https://www.w3.org/WAI/ARIA/apg/patterns/radio) and supports arrow-key navigation.
