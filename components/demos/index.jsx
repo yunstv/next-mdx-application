@@ -13,3 +13,4 @@ export { default as SelectDemo } from './Select/stitches';
 export { default as SliderDemo } from './Slider/stitches';
 export { default as SlotDemo } from './Slot/stitches';
 export { default as SwitchDemo } from './Switch/stitches';
+export { default as TabsDemo } from './Tabs/stitches';

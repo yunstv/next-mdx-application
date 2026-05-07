@@ -1,0 +1,49 @@
+---
+metaTitle: Tabs
+metaDescription: A set of layered sections of content — known as tab panels — that are displayed one at a time.
+name: tabs
+aria: https://www.w3.org/WAI/ARIA/apg/patterns/tabpanel
+---
+
+# Tabs
+
+<h1>A set of layered sections of content — known as tab panels — that are displayed one at a time.</h1>
+
+<HeroContainer>
+  <TabsDemo />
+</HeroContainer>
+
+<HeroCodeBlock folder="Tabs" />
+
+## Installation
+
+```bash
+npm install @radix-ui/react-tabs
+```
+
+## Anatomy
+
+```jsx
+import * as Tabs from '@radix-ui/react-tabs';
+
+export default () => (
+  <Tabs.Root>
+    <Tabs.List>
+      <Tabs.Trigger />
+    </Tabs.List>
+    <Tabs.Content />
+  </Tabs.Root>
+);
+```
+
+## API Reference
+
+### List / Trigger
+The bar of tab triggers.
+
+### Content
+The panel associated with each trigger via `value`.
+
+## Accessibility
+
+Adheres to the [Tabs WAI-ARIA design pattern](https://www.w3.org/WAI/ARIA/apg/patterns/tabpanel).
